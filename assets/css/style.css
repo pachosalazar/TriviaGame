@@ -1,177 +1,43 @@
-
-.crystal {
-    
-    height: 200px;
-    width: 200px;
-    background-image:src('" + img[i] + "');
-    background-size:cover;
-    
-}
-.crystals {
-    display: flex;
-    justify-content: space-around;
-   
-   
-}
-
-img{
-    width:50px; 
-}
-
-/*
- * Globals
- */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-.h3 {
-    text-justify: auto;
-}
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
-
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  background-image: url("../image/background.png" );
-  background-size: auto 110%;
+body{
+  background-image: url("../image/springfield.jpg");
   background-repeat: no-repeat;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-weight: bold;
-  box-shadow: none;
-
+  height: 100vh;
+}
+p{
+  color: white;
+}
+.footer{
+  position: fixed;
+}
+h1 , h2 {
+  color: rgb(247, 222, 2);
+  text-shadow: -2px 0 black,0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 60px;
+}
+.answer {
+  color: rgb(247, 222, 2);
+  background-color: rgb(0, 183, 255);
+  border-bottom-color: 2px rgb(247, 222, 2);
+  height: 50px;
+  padding-left: 14px;
+  border-radius: 4px;
+  border: 3px solid black;
+}
+#wrapper {
+  color:white;
+  width: 300px;
+  text-align: center;
+  margin: 50px auto 0;
+  font-size: 30px;
+  background-color: rgba(0, 100, 0, 0.815);
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(165, 108, 42);
 }
 
 
-.container {
-    max-width: 1140px;
-    font-size: 1.35rem;
-    font-weight: 600;
-    text-shadow: 3px 3px #130a0a;
-}
-.lead {
-    font-size: 1.75rem;
-    font-weight: 600;
-    text-shadow: 3px 3px #130a0a;
-}
-.cover-heading { 
-    text-shadow: 2px 2px #130a0a;
-
-}
-
-.alert-success {
-    background-color: rgba(28, 180, 28, 0.527);
-    border-color: rgb(23, 73, 26);
-    
-}
-.alert-success, .alert-warning, .alert-info{
-    font-family: 'Gloria Hallelujah', cursive;
-    font-weight: bold;
-    font-size: 20px;
-    text-shadow: 2px 2px #130a0a;
-
-}
-.alert-warning{
-    background-color: rgba(226, 9, 9, 0.507);
-    border-color: rgb(23, 73, 26);
-}
-.alert-info {
-    background-color: rgba(81, 84, 235, 0.5);
-    border-color: rgb(23, 73, 26);
-    
-   
-}
-body {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  color: #fff;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-}
-
-.cover-container {
-  max-width: 42em;
-}
-
-
-/*
- * Header
- */
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
-
-
-/*
- * Cover
- */
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: 700;
-}
-
-
-/*
- * Footer
- */
-.mastfoot {
-  color: rgb(5, 5, 5);
+.text-center {
+    text-justify: auto;
+    color: rgb(247, 222, 2);
+    text-shadow: -2px 0 black,0 2px black, 2px 0 black, 0 -2px black;
 }
