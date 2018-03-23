@@ -2,7 +2,7 @@
 
 var start;
 var HTMLDOM;
-var time = 0;
+var time = 30;
 
 // add another array within the array to use the index of the first one
 var question = [
@@ -21,7 +21,6 @@ var answer = [
     ["Otto", "Timothy", "Lyle", "Apu"]
 ];
 var right = ["A. Ned Flanders", "A. Springfield", "A. Stampy", "A. Otto"];
-// right[0][0] = "Ned Flanders";
 var Counter = 0;
 var crono;
 var Wrong = 0;
@@ -44,7 +43,7 @@ $(document).ready(function() {
         event.preventDefault();
         music.play();
         generateHTML();
-        timerframe();
+        // timerframe();
 
     });
 
@@ -57,8 +56,8 @@ $(document).ready(function() {
 
         if (selectedAnswer === right[Counter]) {
 
-            clearInterval(crono);
-            good.play();
+            // clearInterval(crono);
+            // good.play();
             Win();
         } else {
             clearInterval(crono);
@@ -69,7 +68,7 @@ $(document).ready(function() {
 
     $("body").on("click", ".reset-button", function(event) {
         music.play();
-        resetHTMLDOM();
+    generateHTML();
     });
 
 });
@@ -77,7 +76,7 @@ $(document).ready(function() {
 function LossTimeOut() {
     blank++;
     HTMLDOM = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
-        Counter + "</span></p>" + "<p class='text-center'>Bad luck man no more time " +
+        time + "</span></p>" + "<p class='text-center'>Bad luck man no more time " +
         right[Counter] + "</p>" +
         "<img class='center-block img-wrong' src='../image/timeout homer.gif'>";
     $("#wrapper").html(HTMLDOM);
@@ -87,7 +86,7 @@ function LossTimeOut() {
 function Win() {
     right++;
     HTMLDOM = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
-        Counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " +
+        time + "</span></p>" + "<p class='text-center'>Correct! The answer is: " +
         right[Counter] + "</p>" + "<img class='center-block img-right' src='../image/bart.gif'>";
     $("#wrapper").html(HTMLDOM);
     setTimeout(timer, 4000);
@@ -96,7 +95,7 @@ function Win() {
 function Lost() {
     Wrong++;
     HTMLDOM = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
-        Counter + "</span></p>" + "<p class='text-center'>Wrong! Wrong! Wrong! " +
+        time + "</span></p>" + "<p class='text-center'>Wrong! Wrong! Wrong! " +
         right[Counter] + "</p>" +
         "<img class='center-block img-wrong' src='../image/homer.gif'>";
     $("#wrapper").html(HTMLDOM);
@@ -104,7 +103,7 @@ function Lost() {
 }
 
 function generateHTML() {
-    HTMLDOM = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" +
+    HTMLDOM = "<p class='text-center timer-p'>Time Remaining: <span class='timer'></span></p><p class='text-center'>" +
         question[Counter] + "</p><p class='first-answer answer'>A. " + answer[Counter][0] +
         "</p><p class='answer'>B. " + answer[Counter][1] + "</p><p class='answer'>C. " +
         answer[Counter][2] + "</p><p class='answer'>D. " + answer[Counter][3] + "</p>";
@@ -125,16 +124,15 @@ function timer() {
 function timerframe() {
     crono = setInterval(thirtySeconds, 1000);
 
-    function thirtySeconds() {
         if (Counter === 0) {
             clearInterval(crono);
-            LossTimeOut();
-        }
-        if (Counter > 0) {
+            LossToTimeOut();
+        } else(Counter > 0) 
             Counter--;
-        }
+        
         $(".timer").html(Counter);
-    }
+        
+    
 }
 
 function finalScreen() {
@@ -146,7 +144,8 @@ function finalScreen() {
     $("#wrapper").html(HTMLDOM);
 }
 
-function resetHTMLDOM() {
+$(".reset-button").on("click", function(){
+    console.log("clicked");
     time = 0;
     right = 0;
     Wrong = 0;
@@ -154,4 +153,5 @@ function resetHTMLDOM() {
     Counter = 30;
     generateHTML();
     timerframe();
-}
+});
+    
